@@ -34,5 +34,76 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 🗂️ Folder Structure
+
+---
+
+## 🚀 Setup Steps Summary
+
+1. **Provision Azure VMs:**
+   - Create `DC-1` (Windows Server 2019)
+   - Create `Client-1` (Windows 10 Pro)
+   - Ensure both are in the same virtual network and subnet
+
+2. **Configure DC-1:**
+   - Assign static private IP
+   - Install AD DS role via PowerShell or Server Manager
+   - Promote to Domain Controller with a new forest `af.midroam.com`
+
+3. **Configure Client-1:**
+   - Point DNS to DC-1’s private IP
+   - Join domain using domain admin credentials
+   - Restart to complete domain join
+
+4. **Active Directory Tasks:**
+   - Create OUs: `_ADMINS`, `_EMPLOYEES`
+   - Create users and assign to OUs
+   - Add new admin to `Domain Admins` group
+
+5. **Group Policy Tasks:**
+   - Create and link GPO to `EMPLOYEES` OU
+   - Configure User Configuration policies (e.g., remove programs, enable screensaver)
+   - Use `gpupdate /force` and `gpresult /r` to verify
+
+6. **Shared Folder Setup:**
+   - Create a shared folder on DC-1 or another file server
+   - Set NTFS and Share permissions for specific users or groups
+   - Access via UNC path from client PC (`\\DC-1\SharedFolder`)
+
+---
+
+## 📸 Screenshots
+
+| Domain Join Success | GPO Result | Shared Folder Access |
+|---------------------|------------|-----------------------|
+| ![](images/domain-join-success.png) | ![](images/gpo-applied.png) | ![](images/shared-folder-access.png) |
+
+---
+
+## 🧠 Lessons Learned
+
+- Importance of DNS resolution in domain joining
+- Troubleshooting Group Policy using `gpresult`
+- Secure access and delegation using OUs and GPOs
+- Differences between local and domain permissions
+
+---
+
+## 📌 Next Steps / Ideas for Improvement
+
+- Add a second Domain Controller for redundancy
+- Integrate Azure AD or hybrid configuration
+- Automate entire setup using Terraform or ARM templates
+- Explore user login scripts and software deployment via GPO
+
+---
+
+## 🙌 Acknowledgments
+
+This lab was inspired by real-world scenarios and Microsoft documentation on Active Directory and Azure VM networking.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
