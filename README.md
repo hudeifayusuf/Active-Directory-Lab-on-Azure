@@ -1,4 +1,3 @@
-![Microsoft Active Directory Logo](Active-directory.png | width=100)
 <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="500">
 # 🖥️ Active Directory Lab on Azure
 
