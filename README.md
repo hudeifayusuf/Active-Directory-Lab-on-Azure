@@ -25,18 +25,12 @@ This project showcases the setup of a Windows Server Active Directory environmen
   <img src="Architecture.png" alt="DC Architecture" width="600">
 </div>
 
-## Features Implemented
-
-- Created and promoted a Windows Server VM as a Domain Controller
-- Installed and configured Active Directory Domain Services (AD DS)
-- Configured DNS to point to DC-1
-- Joined a Windows 10 client to the domain
-- Created Organizational Units (OUs) and users
-- Applied and verified Group Policies (GPOs)
-  - Disabled “Add or Remove Programs” for employees
-  - Enabled screen saver with lock
-- Configured folder sharing with permissions
-- Verified access using domain credentials via RDP and shared folders
+## Key Steps
+1. Provisioned VMs in Azure with a private virtual network.
+2. Set static IP and promoted DC-1 to a Domain Controller.
+3. Configured the DNS on the client PC to point to DC-1’s IP.
+4. Joined Client-1 machine to the domain (DC-1).
+5. Created user accounts and ensured successful logon via remote access.
 
 ---
 
