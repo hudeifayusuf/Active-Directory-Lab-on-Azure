@@ -9,20 +9,20 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 ---
 
-## Lab Overview
-
-- **Cloud Platform:** Microsoft Azure  
-- **Operating Systems:**
-  - Windows Server 2019 (Domain Controller)
-  - Windows 10 Pro (Client PC)
-- **Domain Name:** `af.midroam.com`
-- **Region:** South Africa North
-- **Architecture:**  
-  - Virtual Network: `10.0.0.0/16`
-  - DC-1 Private IP: `10.0.0.X`
-  - Client-1 Private IP: `10.0.0.Y`
+## Technologies Used
+- Microsoft Azure
+- Windows Server 2019
+- Windows 10 Pro
+- Active Directory Domain Services
+- PowerShell
+- RDP
 
 ---
+
+## Architecture
+- **DC-1**: Windows Server 2019 (Domain Controller)
+- **Client-1**: Windows 10 Pro (Domain Joined)
+- Virtual Network (vnet): 10.0.0.0/16
 
 ## Features Implemented
 
