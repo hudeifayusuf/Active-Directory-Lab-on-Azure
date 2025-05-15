@@ -1,4 +1,4 @@
-<div align=center style="margin-bottom:30%;">
+<div align=center style="margin-bottom:30px;">
   <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="600">
 </div>
 
