@@ -39,9 +39,6 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 ---
 
-
----
-
 ## Setup Steps Summary
 
 1. **Provision Azure VMs:**
