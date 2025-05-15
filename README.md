@@ -1,15 +1,15 @@
-<div align=center style="margin-bottom:30px;">
+<div align=center>
   <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="600">
 </div>
 
 
-## 🖥️ Active Directory Lab on Azure
+## Active Directory Lab on Azure
 
 This project demonstrates how to set up a Windows Server Active Directory environment using Microsoft Azure. The lab involves provisioning a Domain Controller (DC), joining a client PC to the domain, configuring DNS, applying Group Policies, and testing folder sharing and security features.
 
 ---
 
-## 🌐 Lab Overview
+## Lab Overview
 
 - **Cloud Platform:** Microsoft Azure  
 - **Operating Systems:**
@@ -24,7 +24,7 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 🛠️ Features Implemented
+## Features Implemented
 
 - Created and promoted a Windows Server VM as a Domain Controller
 - Installed and configured Active Directory Domain Services (AD DS)
@@ -42,7 +42,7 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 🚀 Setup Steps Summary
+## Setup Steps Summary
 
 1. **Provision Azure VMs:**
    - Create `DC-1` (Windows Server 2019)
@@ -76,7 +76,7 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Domain Join Success | GPO Result | Shared Folder Access |
 |---------------------|------------|-----------------------|
@@ -84,7 +84,7 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 🧠 Lessons Learned
+## Lessons Learned
 
 - Importance of DNS resolution in domain joining
 - Troubleshooting Group Policy using `gpresult`
@@ -93,7 +93,7 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 📌 Next Steps / Ideas for Improvement
+## Next Steps / Ideas for Improvement
 
 - Add a second Domain Controller for redundancy
 - Integrate Azure AD or hybrid configuration
@@ -102,13 +102,13 @@ This project demonstrates how to set up a Windows Server Active Directory enviro
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 This lab was inspired by real-world scenarios and Microsoft documentation on Active Directory and Azure VM networking.
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
