@@ -7,8 +7,6 @@
 
 This project showcases the setup of a Windows Server Active Directory environment on Microsoft Azure. It involves deploying a Domain Controller (DC) and a Client (PC), joining the client to the domain, creating user accounts, and ensuring the user accounts can log on successfully with proper connectivity and remote access.
 
----
-
 ## Technologies Used
 - Microsoft Azure
 - Windows Server 2019
@@ -17,12 +15,12 @@ This project showcases the setup of a Windows Server Active Directory environmen
 - PowerShell
 - RDP
 
----
-
 ## Architecture
 - **DC-1**: Windows Server 2019 (Domain Controller)
 - **Client-1**: Windows 10 Pro (Domain Joined)
 - Virtual Network (vnet): 10.0.0.0/16
+
+![](Architecture.png)
 
 ## Features Implemented
 
