@@ -1,5 +1,5 @@
 <div align=center>
-  <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="550">
+  <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="600">
 </div>
 
 ## 🖥️ Active Directory Lab on Azure
