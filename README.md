@@ -20,7 +20,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 - **DC-1**: Windows Server 2019 (Domain Controller)
 - **Client-1**: Windows 10 Pro (Domain Joined)
 - Virtual Network (vnet): 10.0.0.0/16
-
+&nbsp;
 <div align=center>
   <img src="Architecture.png" alt="DC Architecture" width="600">
 </div>
