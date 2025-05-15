@@ -26,11 +26,11 @@ This project showcases the setup of a Windows Server Active Directory environmen
 </div>
 
 ## Key Steps
-1. Provisioned VMs in Azure with a private virtual network.
-2. Set static IP and promoted DC-1 to a Domain Controller.
-3. Configured the DNS on the client PC to point to DC-1’s IP.
-4. Joined Client-1 machine to the domain (DC-1).
-5. Created user accounts and ensured successful logon via remote access.
+- Provisioned VMs in Azure with a private virtual network.
+- Set static IP and promoted DC-1 to a Domain Controller.
+- Configured the DNS on the client PC to point to DC-1’s IP.
+- Joined Client-1 machine to the domain (DC-1).
+- Created user accounts and ensured successful logon via remote access.
 
 ---
 
