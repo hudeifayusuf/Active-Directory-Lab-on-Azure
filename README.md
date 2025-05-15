@@ -3,9 +3,9 @@
 </div>
 
 
-### Active Directory Lab on Azure
+## Active Directory Lab on Azure
 
-This project showcases the setup of a Windows Server Active Directory environment on Microsoft Azure. It involves deploying a Domain Controller (DC) and a Client PC, joining the client to the domain, creating user accounts, and configuring secure connectivity and remote access.
+This project showcases the setup of a Windows Server Active Directory environment on Microsoft Azure. It involves deploying a Domain Controller (DC) and a Client (PC), joining the client to the domain, creating user accounts, and ensuring the user accounts can log on successfully with proper connectivity and remote access.
 
 ---
 
