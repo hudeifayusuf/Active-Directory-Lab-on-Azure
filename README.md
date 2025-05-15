@@ -2,6 +2,7 @@
   <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="600">
 </div>
 
+
 ## 🖥️ Active Directory Lab on Azure
 
 This project demonstrates how to set up a Windows Server Active Directory environment using Microsoft Azure. The lab involves provisioning a Domain Controller (DC), joining a client PC to the domain, configuring DNS, applying Group Policies, and testing folder sharing and security features.
