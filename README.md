@@ -2,6 +2,7 @@
   <img src="Active-directory.png" alt="Microsoft Active Directory Logo" width="600">
 </div>
 
+&nbsp;
 
 # Active Directory Lab on Azure
 
