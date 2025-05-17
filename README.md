@@ -105,22 +105,20 @@ This project showcases the setup of a Windows Server Active Directory environmen
 1. **DNS Configuration**
    - In Azure Portal > Client-1 VM > Networking > Network Interface > DNS servers
    - Set to **Custom DNS** and enter the static IP of DC-1
+   - Restart *Client-1* from the Azure Portal
 
-2. **Restart Client-1**
-   - Go to Azure Portal > Client-1 VM > Restart
-
-3. **Verify DNS Settings**
+2. **Verify DNS Settings**
    - Open **Command Prompt** on Client-1
    - Run: `ipconfig /all`
    - Confirm DNS points to DC-1
 
-4. **Join Client-1 to Domain**
+3. **Join Client-1 to Domain**
    - Right-click Start > System > Rename this PC (Advanced)
    - Click “Change” and join the domain (e.g., `lab.yourdomain.com`)
    - Use domain admin credentials when prompted
    - Restart the machine
 
-5. **Verify Domain Membership**
+4. **Verify Domain Membership**
    - Login as the domain admin
    - Open **System Information** to confirm domain membership
 
