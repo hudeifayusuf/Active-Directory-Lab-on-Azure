@@ -31,66 +31,68 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 ### 1. Setting Up Resources in Azure
 
-#### Create Domain Controller VM
-- **Name**: DC-1  
-- **OS**: Windows Server 2022  
-- Note the **Resource Group** and **Virtual Network (VNet)** created automatically.
+**Create Domain Controller VM**
+- **Name**: `DC-1`
+- **OS**: Windows Server 2022
+- **Resource Group**: Use a new or existing one
+- **Virtual Network (VNet)**: Create a private VNet or use an existing one
 
-#### Configure Network Settings
-- Set **DC-1’s NIC** Private IP address to **static**.
+**Configure Network Settings**
+- Set `DC-1`'s private IP address to static
 
-#### Create Client VM
-- **Name**: Client-1  
-- **OS**: Windows 10  
-- Use the **same Resource Group and VNet** as DC-1.
+**Create Client VM**
+- **Name**: `Client-1`
+- **OS**: Windows 10
+- Use the same Resource Group and VNet as `DC-1`
 
-#### Verify Network Placement
-- Confirm both VMs are in the **same VNet** using **Azure Network Watcher**.
+**Verify Network Connectivity**
+- Ensure both VMs are in the same VNet
+- Use **Azure Network Watcher** to verify private IP connectivity between `DC-1` and `Client-1`
 
----
+### 2. Promoting the Domain Controller
 
-### 2. Verifying Connectivity
-- Connect to **DC-1** via RDP.
-- Ping **Client-1** from DC-1 and vice versa to confirm **network connectivity**.
-- Disable **Windows Defender Firewall** temporarily if ping fails.
+**Set Static IP on DC-1**
+- Assign the static IP to `DC-1` via NIC settings
 
----
+**Install AD DS Role**
+- Use **Server Manager** or **PowerShell** to install the Active Directory Domain Services role
 
-### 3. Installing Active Directory
-- Rename DC-1’s hostname (if needed).
-- Install **Active Directory Domain Services (AD DS)** role via Server Manager.
-- Promote the server to a **Domain Controller**.
-- Set up a **new forest** and root domain (e.g., `af.midroam.com`).
-- Restart as prompted.
+**Promote to Domain Controller**
+- Create a new forest (e.g., `af.midroam.com`)
+- Restart the server when prompted
 
----
+### 3. DNS Configuration
+
+**Ensure DNS is Configured Properly**
+- `DC-1` becomes the DNS server
+- On `Client-1`, update DNS settings to point to `DC-1`'s IP address
 
 ### 4. Creating an Additional Admin User
-- Create a new user (e.g., `canu.xawid`) via **Active Directory Users and Computers (ADUC)**.
-- Add this user to the **Domain Admins** group.
-- Log in to DC-1 using the new admin user to verify administrative privileges.
 
----
+- On `DC-1`, open **Active Directory Users and Computers**
+- Create a new user (e.g., `azureadmin`)
+- Add the user to the **Domain Admins** group
 
 ### 5. Joining Client-1 to the Domain
-- Log in to **Client-1** as local admin.
-- Set the DNS address to point to **DC-1’s private IP**.
-- Join the domain (`af.midroam.com`) via **System Properties > Domain**.
-- Restart Client-1.
 
----
+- Log in to `Client-1` using the local admin account
+- Join the PC to the domain (e.g., `af.midroam.com`)
+- Restart `Client-1`
 
 ### 6. Configuring Remote Desktop Access
-- Enable **Remote Desktop** on Client-1.
-- Allow domain users to connect via **System Properties > Remote Settings**.
-- Add domain users to **Remote Desktop Users** group if needed.
 
----
+- Enable Remote Desktop on both VMs
+- Add domain users to the **Remote Desktop Users** group (on `Client-1`)
+- Ensure appropriate NSG rules and firewall settings allow RDP access
 
-### 7. Creating Non-Administrative Users
-- In ADUC, create additional users (e.g., `student1`, `student2`).
-- Assign them to **Domain Users** group (default).
-- Log in to Client-1 via RDP using each user to confirm successful logon.
+### 7. Creating and Testing Standard User Accounts
+
+**Create Non-Administrative Users**
+- In ADUC, create users (e.g., `john.doe`, `jane.doe`)
+
+**Verify Successful Logon**
+- Use Remote Desktop to log in to `Client-1` with the newly created users
+- Confirm successful domain login and access rights
 
 ---
 
