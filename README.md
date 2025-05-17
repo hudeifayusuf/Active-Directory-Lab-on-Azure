@@ -104,7 +104,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 1. **DNS Configuration**
    - In Azure Portal > Client-1 VM > Networking > Network Interface > DNS servers
-   - Set to **Custom DNS** and enter the static IP of DC-1
+   - Set to **Custom DNS** and enter the static IP of *DC-1*
    - Restart *Client-1* from the Azure Portal
 
 2. **Verify DNS Settings**
