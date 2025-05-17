@@ -49,7 +49,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 ---
 
 ## Verify Network Connectivity 
-  - Enable ICMP on Both VMs by openning PowerShell as Administrator and run:
+  - Enable ICMP on Both VMs by opening PowerShell as Administrator and running:
      ```powershell
      Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
      ```
@@ -61,13 +61,13 @@ This project showcases the setup of a Windows Server Active Directory environmen
 ## Set Up Active Directory
 
 1. **Install Active Directory Domain Services (AD DS)**
-   - Open **PowerShell as Administrator** on DC-1
-   - Run:
+   - Confirm that DC-1’s private IP is configured as **Static**. (If not, refer back to **Step 2** in the **Setting Up Resources in Azure** section.)
+   - Open PowerShell as Administrator on DC-1 and run:
      ```powershell
      Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
      ```
 
-2. **Promote DC-1 to Domain Controller**
+3. **Promote DC-1 to Domain Controller**
    - Run the following command to create a new forest:
      ```powershell
      Import-Module ADDSDeployment
