@@ -78,7 +78,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
    - Enter the password again to confirm.
    - Type "y" and enter to continue with the operation.
 
-> 💡 *To ensure smooth management and avoid potential conflicts, Microsoft and industry standards recommend using a valid, registered domain name with a subdomain prefix (e.g., lab.yourdomain.com) for internal domain setups.*
+> 💡 *It's highly recommended to use a valid, registered domain name with a subdomain prefix (e.g., lab.yourdomain.com) for internal domain setups to avoid conflicts and ensure proper management.*
 
 ---
 
