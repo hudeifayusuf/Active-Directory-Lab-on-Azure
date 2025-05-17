@@ -72,10 +72,10 @@ This project showcases the setup of a Windows Server Active Directory environmen
      ```powershell
      Install-ADDSForest 
      ```
-   - Enter a domain name of your choice (e.g., yourdomain.com).
-   - Input the Administrator Password when prompted.
-   - Enter the password again to confirm.
-   - Type "y" and enter to continue with the operation.
+   - Specify a domain name of your choice (e.g., yourdomain.com).
+   - When prompted, enter and confirm DSRM password.
+     *For simplicity, you can use the same password as the local Administrator account.*
+   - Type Y and press Enter to begin the promotion.
 
 > 💡 *It's highly recommended to use a valid, registered domain name with a subdomain prefix (e.g., lab.yourdomain.com) for internal domain setups to avoid conflicts and ensure proper management.*
 
