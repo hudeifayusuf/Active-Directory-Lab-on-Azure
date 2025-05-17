@@ -53,7 +53,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
      ```powershell
      Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
      ```
-  - On DC-1, open Command Prompt and run: `ping <Client-1 IP>`
+  - On DC-1, open Command Prompt and run: ```ping <Client-1 IP>```
   - Verify that the ping replies are now successful, confirming network connectivity.
 
 ---
