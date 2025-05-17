@@ -10,7 +10,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 ## Technologies Used
 - Microsoft Azure
-- Windows Server 2019
+- Windows Server 2022
 - Windows 10 Pro
 - Active Directory Domain Services
 - PowerShell
