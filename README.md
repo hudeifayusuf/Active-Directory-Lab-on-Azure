@@ -43,7 +43,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 3. **Create Client VM**
    - Name: `Client-1`
    - OS: Windows 10
-   - Use the same Resource Group and VNet as DC-1
+   - Use the same Resource Group and VNet as *DC-1*
    - Confirm both VMs are in the same VNet (verify using Network Watcher)
 
 ---
@@ -53,7 +53,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
      ```powershell
      Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
      ```
-  - On DC-1, open Command Prompt and run: `ping <Client-1 IP>`
+  - On *DC-1*, open Command Prompt and run: `ping <Client-1 IP>`
   - Verify that the ping replies are now successful, confirming network connectivity
 
 ---
@@ -61,8 +61,8 @@ This project showcases the setup of a Windows Server Active Directory environmen
 ## Set Up Active Directory
 
 1. **Install Active Directory Domain Services (AD DS)**
-   - Confirm that DC-1’s private IP is configured as **Static**. (If not, refer back to **Step 2** in the **Setting Up Resources in Azure** section.)
-   - Open PowerShell as Administrator on DC-1 and run:
+   - Confirm that *DC-1’s* private IP is configured as **Static**. (If not, refer back to **Step 2** in the **Setting Up Resources in Azure** section.)
+   - Open PowerShell as Administrator on *DC-1* and run:
      ```powershell
      Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
      ```
@@ -108,9 +108,9 @@ This project showcases the setup of a Windows Server Active Directory environmen
    - Restart *Client-1* from the Azure Portal
 
 2. **Verify DNS Settings**
-   - Open **Command Prompt** on Client-1
+   - Open **Command Prompt** on *Client-1*
    - Run: `ipconfig /all`
-   - Confirm DNS points to DC-1
+   - Confirm DNS points to *DC-1*
 
 3. **Join Client-1 to Domain**
    - Right-click Start > System > Rename this PC (Advanced)
@@ -127,7 +127,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 ## Configuring Remote Desktop Access
 
 1. **Enable RDP Access for Standard Users**
-   - On Client-1, right-click Start > System > Remote Desktop settings
+   - On *Client-1*, right-click Start > System > Remote Desktop settings
    - Click “Select users that can remotely access this PC”
    - Add standard users to the list
 
@@ -136,14 +136,14 @@ This project showcases the setup of a Windows Server Active Directory environmen
 ## Creating and Testing Standard User Accounts
 
 1. **Create Users via PowerShell**
-   - Open PowerShell as domain admin on DC-1 and run:
+   - Open PowerShell as domain admin on *DC-1* and run:
      ```powershell
      Import-Module ActiveDirectory
      New-ADUser -Name "John Doe" -GivenName John -Surname Doe -SamAccountName jdoe -UserPrincipalName jdoe@lab.yourdomain.com -Path "OU=_EMPLOYEES,DC=lab,DC=yourdomain,DC=com" -AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force) -Enabled $true
      ```
 
 2. **Verify Logon via Remote Desktop**
-   - Use Remote Desktop Connection (RDP) to access Client-1
+   - Use Remote Desktop Connection (RDP) to access *Client-1*
    - Login as the standard user (e.g., `jdoe@lab.yourdomain.com`)
    - Ensure successful login
 
