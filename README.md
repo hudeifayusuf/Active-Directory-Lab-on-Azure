@@ -35,7 +35,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
    - Ensure RDP (port 3389) is allowed in the NSG
    - Use a new or existing Resource Group and Virtual Network (VNet)
 
-2. **Configure Network Settings**
+2. **Set DC-1’s Private IP to Static**
    - Go to Azure Portal > DC-1 VM > Networking > Network Interface > IP Configurations
    - Set Private IP address assignment to **Static**
    - Save the configuration
@@ -48,17 +48,13 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 ---
 
-## Verify Network Connectivity
-
-1. **Enable ICMP on Both VMs**  
-   - Open **PowerShell as Administrator** and run:
+## Verify Network Connectivity 
+  - Enable ICMP on Both VMs by openning PowerShell as Administrator and run:
      ```powershell
-     New-NetFirewallRule -DisplayName "Allow ICMPv4-In" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow
+     Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
      ```
-
-2. **Ping DC-1 from Client-1**
-   - Open **Command Prompt**
-   - Run: `ping <DC-1 IP>`
+  - On DC-1, open Command Prompt and run: `ping <Client-1 IP>`
+  - Verify that the ping replies are now successful, confirming network connectivity.
 
 ---
 
@@ -77,8 +73,12 @@ This project showcases the setup of a Windows Server Active Directory environmen
      Import-Module ADDSDeployment
      Install-ADDSForest -DomainName "lab.yourdomain.com" -CreateDnsDelegation:$false -DatabasePath "C:\Windows\NTDS" -DomainMode "7" -DomainNetbiosName "LAB" -ForestMode "7" -InstallDns:$true -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\Windows\SYSVOL" -Force:$true
      ```
+   - Enter a domain name of your choice (e.g., yourdomain.com).
+   - Input the Administrator Password when prompted.
+   - Enter the password again to confirm.
+   - Type "y" and enter to continue with the operation.
 
-> 💡 *It’s best practice to create subdomains (e.g., `lab.yourdomain.com`) from your registered domain for internal use, as recommended by Microsoft and industry standards.*
+> 💡 *To ensure smooth management and avoid potential conflicts, Microsoft and industry standards recommend using a valid, registered domain name with a subdomain prefix (e.g., lab.yourdomain.com) for internal domain setups.*
 
 ---
 
