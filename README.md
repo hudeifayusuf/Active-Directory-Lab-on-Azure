@@ -32,8 +32,8 @@ This project showcases the setup of a Windows Server Active Directory environmen
 1. **Create Domain Controller VM**
    - Name: `DC-1`
    - OS: Windows Server 2022
+   - Create a new or use existing Resource Group and Virtual Network (VNet)
    - Ensure RDP (port 3389) is allowed in the NSG
-   - Use a new or existing Resource Group and Virtual Network (VNet)
 
 2. **Set DC-1’s Private IP to Static**
    - Go to Azure Portal > DC-1 VM > Networking > Network Interface > IP Configurations
