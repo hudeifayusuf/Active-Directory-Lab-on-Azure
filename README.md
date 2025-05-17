@@ -29,35 +29,72 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 ## Setup Steps
 
-1. **Provision Azure VMs:**
-   - Create `DC-1` (Windows Server 2019)
-   - Create `Client-1` (Windows 10 Pro)
-   - Ensure both are in the same virtual network and subnet
+### 1. Setting Up Resources in Azure
 
-2. **Configure DC-1:**
-   - Assign static private IP
-   - Install AD DS role via PowerShell or Server Manager
-   - Promote to Domain Controller with a new forest `af.midroam.com`
+#### Create Domain Controller VM
+- **Name**: DC-1  
+- **OS**: Windows Server 2022  
+- Note the **Resource Group** and **Virtual Network (VNet)** created automatically.
 
-3. **Configure Client-1:**
-   - Point DNS to DC-1’s private IP
-   - Join domain using domain admin credentials
-   - Restart to complete domain join
+#### Configure Network Settings
+- Set **DC-1’s NIC** Private IP address to **static**.
 
-4. **Active Directory Tasks:**
-   - Create OUs: `_ADMINS`, `_EMPLOYEES`
-   - Create users and assign to OUs
-   - Add new admin to `Domain Admins` group
+#### Create Client VM
+- **Name**: Client-1  
+- **OS**: Windows 10  
+- Use the **same Resource Group and VNet** as DC-1.
 
-5. **Group Policy Tasks:**
-   - Create and link GPO to `EMPLOYEES` OU
-   - Configure User Configuration policies (e.g., remove programs, enable screensaver)
-   - Use `gpupdate /force` and `gpresult /r` to verify
+#### Verify Network Placement
+- Confirm both VMs are in the **same VNet** using **Azure Network Watcher**.
 
-6. **Shared Folder Setup:**
-   - Create a shared folder on DC-1 or another file server
-   - Set NTFS and Share permissions for specific users or groups
-   - Access via UNC path from client PC (`\\DC-1\SharedFolder`)
+---
+
+### 2. Verifying Connectivity
+- Connect to **DC-1** via RDP.
+- Ping **Client-1** from DC-1 and vice versa to confirm **network connectivity**.
+- Disable **Windows Defender Firewall** temporarily if ping fails.
+
+---
+
+### 3. Installing Active Directory
+- Rename DC-1’s hostname (if needed).
+- Install **Active Directory Domain Services (AD DS)** role via Server Manager.
+- Promote the server to a **Domain Controller**.
+- Set up a **new forest** and root domain (e.g., `af.midroam.com`).
+- Restart as prompted.
+
+---
+
+### 4. Creating an Additional Admin User
+- Create a new user (e.g., `canu.xawid`) via **Active Directory Users and Computers (ADUC)**.
+- Add this user to the **Domain Admins** group.
+- Log in to DC-1 using the new admin user to verify administrative privileges.
+
+---
+
+### 5. Joining Client-1 to the Domain
+- Log in to **Client-1** as local admin.
+- Set the DNS address to point to **DC-1’s private IP**.
+- Join the domain (`af.midroam.com`) via **System Properties > Domain**.
+- Restart Client-1.
+
+---
+
+### 6. Configuring Remote Desktop Access
+- Enable **Remote Desktop** on Client-1.
+- Allow domain users to connect via **System Properties > Remote Settings**.
+- Add domain users to **Remote Desktop Users** group if needed.
+
+---
+
+### 7. Creating Non-Administrative Users
+- In ADUC, create additional users (e.g., `student1`, `student2`).
+- Assign them to **Domain Users** group (default).
+- Log in to Client-1 via RDP using each user to confirm successful logon.
+
+---
+
+> 💡 *Note: It's best practice to create subdomains (e.g., `lab.yourdomain.com`) from your registered domain for internal use, as recommended by Microsoft and industry standards.*
 
 ---
 
