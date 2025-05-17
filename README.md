@@ -54,7 +54,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
      Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
      ```
   - On DC-1, open Command Prompt and run: `ping <Client-1 IP>`
-  - Verify that the ping replies are now successful, confirming network connectivity.
+  - Verify that the ping replies are now successful, confirming network connectivity
 
 ---
 
@@ -72,10 +72,10 @@ This project showcases the setup of a Windows Server Active Directory environmen
      ```powershell
      Install-ADDSForest 
      ```
-   - Specify a domain name of your choice (e.g., yourdomain.com).
-   - When prompted, enter and confirm the password.
-   - Type Y and press Enter to begin the promotion.
-   - After the promotion is done, the system will reboot, log back in to continue.
+   - Specify a domain name of your choice (e.g., yourdomain.com)
+   - When prompted, enter and confirm the password
+   - Type Y and press Enter to begin the promotion
+   - After the promotion is done, the system will reboot, log back in to continue
 
 > Note: *It's highly recommended to use a valid, registered domain name with a subdomain prefix (e.g., lab.yourdomain.com) for internal domain setups to avoid conflicts and ensure proper management.*
 
