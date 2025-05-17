@@ -53,7 +53,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 1. **Enable ICMP on Both VMs**  
    Open **PowerShell as Administrator** and run:
    ```powershell
-   New-NetFirewallRule -DisplayName "Allow ICMPv4-In" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow
+   Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
    ```
 
 2. **Ping DC-1 from Client-1**  
