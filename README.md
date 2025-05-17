@@ -37,7 +37,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 2. **Set DC-1’s Private IP to Static**
    - Go to Azure Portal > DC-1 VM > Networking > Network Interface > IP Configurations
-   - Set Private IP address assignment to Static
+   - Set Private IP address assignment to **Static**
    - Save the configuration
 
 3. **Create Client VM**
@@ -70,8 +70,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 3. **Promote DC-1 to Domain Controller**
    - Run the following command to create a new forest:
      ```powershell
-     Import-Module ADDSDeployment
-     Install-ADDSForest -DomainName "lab.yourdomain.com" -CreateDnsDelegation:$false -DatabasePath "C:\Windows\NTDS" -DomainMode "7" -DomainNetbiosName "LAB" -ForestMode "7" -InstallDns:$true -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\Windows\SYSVOL" -Force:$true
+     Install-ADDSForest 
      ```
    - Enter a domain name of your choice (e.g., yourdomain.com).
    - Input the Administrator Password when prompted.
