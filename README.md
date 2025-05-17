@@ -37,7 +37,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 2. **Set DC-1’s Private IP to Static**
    - Go to Azure Portal > DC-1 VM > Networking > Network Interface > IP Configurations
-   - Set Private IP address assignment to **Static**
+   - Set Private IP address assignment to Static
    - Save the configuration
 
 3. **Create Client VM**
@@ -61,7 +61,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 ## Set Up Active Directory
 
 1. **Install Active Directory Domain Services (AD DS)**
-   - Confirm that DC-1’s private IP is configured as **Static**. (If not, refer back to **Step 2** in the **Setting Up Resources in Azure** section.)
+   - Confirm that DC-1’s private IP is configured as Static. (If not, refer back to Step 2 in the Setting Up Resources in Azure section.)
    - Open PowerShell as Administrator on DC-1 and run:
      ```powershell
      Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
