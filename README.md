@@ -90,7 +90,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
 
 2. **Create a Domain Admin User**
    - Right-click `_ADMINS` > New > User
-   - Create a user (e.g., `labadmin`)
+   - Create a user (e.g., `joe_admin`)
    - Set a secure password and check “Password never expires”
 
 3. **Assign Administrative Rights**
