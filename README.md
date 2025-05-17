@@ -75,7 +75,7 @@ This project showcases the setup of a Windows Server Active Directory environmen
    - Specify a domain name of your choice (e.g., yourdomain.com)
    - When prompted, enter and confirm the password
    - Type `y` and press Enter to begin the promotion
-   - After the promotion is done, the system will reboot, log back in to continue
+   - After the promotion is done, the system will reboot. Log back in to continue
 
 > Note: *It's highly recommended to use a valid, registered domain name with a subdomain prefix (e.g., lab.yourdomain.com) for internal domain setups to avoid conflicts and ensure proper management.*
 
